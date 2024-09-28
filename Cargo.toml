@@ -1,0 +1,21 @@
+[package]
+name = "cargo-tree-mermaid"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.89"
+cargo_metadata = "0.18.1"
+petgraph = "0.6.5"
+semver = "1.0.23"
+serde_json = "1.0.128"
+structopt = "0.3.26"
+
+[dev-dependencies]
+assert_cmd = "2.0.16"
+predicates = "3.1.2"
+
+# Reduce compile time by setting no optimization for build scripts,
+# proc macros, and their dependencies
+[profile.release.build-override]
+opt-level = 0
